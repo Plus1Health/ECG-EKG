@@ -52,8 +52,8 @@ void main(int argc, char *argv[])
 		uint8_t lead_off = (byte0 & 0x80);    // 0x80 10000000
 		//ECG Pace Flag. 1 - Yes | 0 - No
 		uint8_t is_pace = (byte0 & 0x40) ;    // 0x40 01000000 
-		//Detected R flag. 1- Yes | 0 - No
-		uint8_t is_R_flag = (byte0 & 0x20);   //  0x20 00100000
+		//Detected Noise flag. 1- Yes | 0 - No
+		uint8_t is_Noise_flag = (byte0 & 0x10);   //  0x20 0001 0000
 
 		//Parse ECG sample value
 		short nVal = (short)(byte0 & 0x0F);
@@ -64,7 +64,7 @@ void main(int argc, char *argv[])
 		}
 	
 	
-		ecgTxt << static_cast<int32_t>(nVal) << "," << static_cast<int32_t>(lead_off) << "," << static_cast<int32_t>(is_pace) << "," << static_cast<int32_t>(is_R_flag) << endl;
+		ecgTxt << static_cast<int32_t>(nVal) << "," << static_cast<int32_t>(lead_off) << "," << static_cast<int32_t>(is_pace) << "," << static_cast<int32_t>(is_R_flag) << "," << static_cast<int32_t>(is_Noise_flag) << endl;
 
 	}
 	
