@@ -22,7 +22,7 @@ void main(int argc, char *argv[])
 
 	int count = 0;
 
-	ecgDat.open(fileEcgDat, fstream::in);
+	ecgDat.open(fileEcgDat, fstream::in  | ios_base::binary);
 	ecgTxt.open(fileEcgTxt, fstream::out);
 
 
